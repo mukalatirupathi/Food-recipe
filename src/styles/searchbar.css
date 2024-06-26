@@ -1,0 +1,14 @@
+.searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem;
+    gap: 2rem;
+}
+.searchBar .inputBox {
+    width: 50%;
+    padding: 0.2rem;
+    outline: none;
+    border: 0.2rem solid orange;
+    border-radius: 0.4rem;
+}

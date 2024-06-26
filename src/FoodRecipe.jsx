@@ -15,13 +15,14 @@ const FoodRecipe = () => {
       })
       .then(function(data){
        setdata((data));
+
       })
     console.log("hello")
   }
   return (
-    <div className='form' id="form1">
+    <div className="form" id="form1">
       <div className="form12">
-      <form  >
+        <form  >
         <h2 className='mt-1'>Food recipe</h2>
         <input type="text" className='form-control  w-50' onChange={(e)=>setsearch(e.target.value)}  placeholder='Enter your fav food..'></input>
         <br/>
@@ -29,28 +30,30 @@ const FoodRecipe = () => {
       </form>
       </div>
       <div className="component">
-      <div className='row'>
-        {
-          data.hits.map((item)=>
-            <div className='col-md-4'>
-              <div className='card p-2 m-2 '>
-              <img src={item.recipe.image} className='card-img-top' height="300" ></img>
-              <div className='card-body'>
-                <dl>
-                  <dd className='card-title'>{item.recipe.label}</dd>
-                  <dd>Total calories :{Math.round(item.recipe.calories)}</dd>
-                  <button className='card-footer mt-4'>buy</button>
-                </dl>
+        <div className="row">
+          {data.hits.map((item) => (
+            <div className="col-md-4" key={item}>
+              <div className="card p-2 m-2 ">
+                <img
+                  src={item.recipe.image}
+                  className="card-img-top"
+                  height="300"
+                  alt="item.recipe.label"
+                ></img>
+                <div className="card-body">
+                  <dl>
+                    <dd className="card-title">{item.recipe.label}</dd>
+                    <dd>Total calories :{Math.round(item.recipe.calories)}</dd>
+                    <button className="card-footer mt-4">buy</button>
+                  </dl>
+                </div>
               </div>
             </div>
-            </div>
-          )
-        }
-      </div>
+          ))}
+        </div>
       </div>
     </div>
-   
-  )
+  );
 }
 
 
